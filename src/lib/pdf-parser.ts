@@ -1,16 +1,9 @@
 "use client";
 
-/**
- * Extracts all text content from a PDF file, entirely client-side.
- * Uses dynamic import to avoid SSR issues with pdfjs-dist.
- * @param file - The PDF File object from a file input or drag-and-drop
- * @returns The full extracted text string
- */
+// Extract text from PDF client-side using pdfjs-dist
 export async function extractTextFromPDF(file: File): Promise<string> {
-  // Dynamic import prevents pdfjs-dist from being evaluated during SSR/prerender
   const pdfjsLib = await import("pdfjs-dist");
 
-  // Set the worker source
   pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
     "pdfjs-dist/build/pdf.worker.min.mjs",
     import.meta.url

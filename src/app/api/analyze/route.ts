@@ -9,7 +9,7 @@ export async function POST(request: Request) {
     return Response.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  // 2. Parse and validate request body
+  //Validating the request
   let body: unknown;
   try {
     body = await request.json();
@@ -25,7 +25,7 @@ export async function POST(request: Request) {
     );
   }
 
-  // 3. Call Gemini
+  // 3.Gemini
   try {
     const result = await analyzeResume(
       parsed.data.resumeText,

@@ -1,7 +1,4 @@
-/**
- * Prompt template for the unified resume analysis.
- * Returns a single prompt string that asks Gemini to produce all 7 outputs.
- */
+// Prompt template for unified resume analysis
 export function buildAnalysisPrompt(
   resumeText: string,
   jobDescription: string

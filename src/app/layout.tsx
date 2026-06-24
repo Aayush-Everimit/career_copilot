@@ -26,6 +26,18 @@ export const metadata: Metadata = {
   ],
 };
 
+// Inline script to set theme before paint (prevents flash)
+const themeScript = `
+(function(){
+  try {
+    var t = localStorage.getItem('theme');
+    if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    }
+  } catch(e) {}
+})();
+`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -36,8 +48,12 @@ export default function RootLayout({
       <html
         lang="en"
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        suppressHydrationWarning
       >
-        <body className="min-h-screen bg-white text-gray-900">
+        <head>
+          <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        </head>
+        <body className="min-h-screen bg-background text-foreground">
           {children}
         </body>
       </html>

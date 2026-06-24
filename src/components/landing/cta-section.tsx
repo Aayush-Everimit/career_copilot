@@ -21,7 +21,7 @@ export function CTASection() {
         <Button
           asChild
           size="lg"
-          className="mt-8 bg-white text-[#00ABE4] hover:bg-gray-50 px-8 py-6 text-base font-semibold shadow-lg"
+          className="mt-8 bg-white text-[#00ABE4] hover:bg-gray-50 px-8 py-6 text-base font-semibold shadow-lg dark:bg-gray-900 dark:text-[#00ABE4] dark:hover:bg-gray-800"
         >
           <Link href={isSignedIn ? "/dashboard" : "/sign-up"}>
             Get Started Now

@@ -1,14 +1,14 @@
 import { z } from "zod/v4";
 
-// ── API Request ───────────────────────────────────────────
+// API request validation
 export const AnalyzeRequestSchema = z.object({
-  resumeText: z.string().min(50, "Resume text is too short").max(50_000),
-  jobDescription: z.string().min(50, "Job description is too short").max(10_000),
+  resumeText: z.string().min(20, "Resume text is too short (min 20 chars)").max(50_000),
+  jobDescription: z.string().min(20, "Job description is too short (min 20 chars)").max(10_000),
 });
 
 export type AnalyzeRequest = z.infer<typeof AnalyzeRequestSchema>;
 
-// ── API Response ──────────────────────────────────────────
+// API response validation
 export const AnalysisResultSchema = z.object({
   resumeSummary: z.string(),
   matchScore: z.number().min(0).max(100),

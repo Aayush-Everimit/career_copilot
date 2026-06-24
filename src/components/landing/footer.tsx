@@ -4,10 +4,9 @@ import { Button } from "@/components/ui/button";
 
 export function Footer() {
   return (
-    <footer className="border-t border-gray-100 bg-white py-12">
+    <footer className="border-t border-gray-100 bg-white py-12 dark:border-gray-800 dark:bg-gray-950">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="flex flex-col items-center gap-8">
-          {/* Built for Digital Heroes */}
           <div className="text-center">
             <Button
               asChild
@@ -25,22 +24,20 @@ export function Footer() {
             </Button>
           </div>
 
-          {/* Divider */}
-          <div className="h-px w-full max-w-xs bg-gray-200" />
+          <div className="h-px w-full max-w-xs bg-gray-200 dark:bg-gray-800" />
 
-          {/* Logo & Contact */}
           <div className="flex flex-col items-center gap-3 text-center">
             <Link
               href="/"
-              className="flex items-center gap-2 font-bold text-gray-900"
+              className="flex items-center gap-2 font-bold text-gray-900 dark:text-white"
             >
               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#00ABE4]">
                 <Rocket className="h-4 w-4 text-white" />
               </div>
               Career Copilot
             </Link>
-            <div className="flex flex-col items-center gap-1 text-sm text-gray-500">
-              <span className="font-medium text-gray-700">Aayush Gautam</span>
+            <div className="flex flex-col items-center gap-1 text-sm text-gray-500 dark:text-gray-500">
+              <span className="font-medium text-gray-700 dark:text-gray-300">Aayush Gautam</span>
               <a
                 href="mailto:aayush_2006@outlook.com"
                 className="flex items-center gap-1 transition-colors hover:text-[#00ABE4]"
@@ -51,8 +48,7 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Copyright */}
-          <p className="text-xs text-gray-400">
+          <p className="text-xs text-gray-400 dark:text-gray-600">
             © {new Date().getFullYear()} Career Copilot. All rights reserved.
           </p>
         </div>
